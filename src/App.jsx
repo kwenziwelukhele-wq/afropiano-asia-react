@@ -5,7 +5,7 @@ function BrandLogo({ className = "", subtle = false }) {
       aria-label="Afropiano Asia"
     >
       <img
-        src="/logo.png.jpg"
+        src="/logo.png.png"
         alt="Afropiano Asia"
         className={`h-auto w-full object-contain ${subtle ? "opacity-90" : "opacity-100"}`}
         onError={(e) => {
@@ -217,7 +217,7 @@ export default function App() {
 
       <section id="top" className="relative min-h-screen overflow-hidden border-b border-white/10 pt-20 md:pt-24">
         <img
-          src="/logo.png.jpg"
+          src="/logo.png.png"
           alt=""
           className="pointer-events-none absolute left-1/2 top-1/2 w-[440px] max-w-[80vw] -translate-x-1/2 -translate-y-1/2 select-none opacity-[0.06] md:w-[680px]"
           onError={(e) => {
