@@ -1,11 +1,11 @@
-export default function AfropianoAsiaWebsite() {
+export default function App() {
   const featuredEvent = {
     title: "Annual White Party (Build-Up Event)",
     date: "Date TBA",
     venue: "Superhouse 2.0, Taichung",
     description:
       "Our annual all-white experience returns as the official build-up to the AFRICA UNITE TOUR (June 18–20). Expect premium vibes, Amapiano & Afrobeats, and a special South African headliner collaboration with Superhouse 2.0.",
-    ticketLink: "https://www.instagram.com/afropianoasia/",
+    ticketLink: "https://afropiano.kktix.cc/",
   };
 
   const eventOffers = [
@@ -216,14 +216,13 @@ export default function AfropianoAsiaWebsite() {
     },
     {
       q: "How do I buy tickets?",
-      a: "Ticket links can be added directly to this website for each event. For now, follow AFROPIANO ASIA on Instagram and TikTok for event drops and announcements.",
+      a: "You can buy directly through our KKTIX page or message us on WhatsApp/Instagram if you need help securing your ticket.",
     },
   ];
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
       <section className="relative min-h-screen overflow-hidden border-b border-white/10">
-        {/* VIDEO BACKGROUND */}
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
@@ -234,13 +233,10 @@ export default function AfropianoAsiaWebsite() {
           <source src="/videos/recap.mp4" type="video/mp4" />
         </video>
 
-        {/* CINEMATIC OVERLAYS */}
         <div className="absolute inset-0 bg-black/65" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.18),transparent_22%),radial-gradient(circle_at_bottom_left,rgba(249,115,22,0.18),transparent_28%)]" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black via-black/70 to-transparent" />
-
-        {/* FLOATING GLOW */}
         <div className="absolute left-1/2 top-24 h-48 w-48 -translate-x-1/2 rounded-full bg-yellow-400/10 blur-3xl" />
 
         <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-6 py-24 md:px-10">
@@ -429,20 +425,33 @@ export default function AfropianoAsiaWebsite() {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-neutral-300">
                 {featuredEvent.description}
               </p>
+
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <a
                   href={featuredEvent.ticketLink}
+                  target="_blank"
+                  rel="noreferrer"
                   className="rounded-2xl bg-yellow-400 px-6 py-3 text-center font-semibold text-black"
                 >
-                  🎟 Buy Tickets
+                  🎟 Buy Tickets (KKTIX)
                 </a>
+
+                <a
+                  href="https://wa.me/886903404734"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl bg-green-500 px-6 py-3 text-center font-semibold text-white"
+                >
+                  💬 Ask on WhatsApp
+                </a>
+
                 <a
                   href="https://www.instagram.com/afropianoasia/"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-2xl border border-white/20 px-6 py-3 text-center"
                 >
-                  See Event Updates
+                  📲 DM on Instagram
                 </a>
               </div>
             </div>
@@ -452,12 +461,11 @@ export default function AfropianoAsiaWebsite() {
                 Ticket Funnel
               </div>
               <p className="mt-4 text-2xl font-bold">
-                Turn social traffic into ticket sales.
+                Buy instantly or message us for details — we’ll help you secure your spot.
               </p>
               <p className="mt-4 leading-7 text-neutral-300">
-                This section is built to become your main conversion block:
-                TikTok creates attention, Instagram builds trust, and this page
-                closes the sale.
+                Some people are ready to buy now, others want to ask questions first.
+                This page gives both options so you never lose a sale.
               </p>
             </div>
           </div>
@@ -560,7 +568,6 @@ export default function AfropianoAsiaWebsite() {
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
             {djs.map((dj) => (
               <div key={dj.name} className="rounded-[2rem] border border-white/10 bg-black/40 overflow-hidden">
-                {/* VIDEO PREVIEW */}
                 <div className="relative h-56">
                   <video className="w-full h-full object-cover" autoPlay muted loop playsInline>
                     <source src={dj.video} type="video/mp4" />
@@ -572,11 +579,9 @@ export default function AfropianoAsiaWebsite() {
                   </div>
                 </div>
 
-                {/* INFO */}
                 <div className="p-6">
                   <p className="text-neutral-300">{dj.description}</p>
 
-                  {/* BADGES */}
                   <div className="mt-5 flex flex-wrap gap-2">
                     {dj.bestFor.map((item) => (
                       <span key={item} className="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/10">
@@ -585,7 +590,6 @@ export default function AfropianoAsiaWebsite() {
                     ))}
                   </div>
 
-                  {/* PRICING + AVAILABILITY */}
                   <div className="mt-6 flex justify-between items-center">
                     <div>
                       <div className="text-xs text-neutral-400 uppercase">Starting Price</div>
@@ -594,7 +598,6 @@ export default function AfropianoAsiaWebsite() {
                     <div className="text-sm text-green-400">{dj.availability}</div>
                   </div>
 
-                  {/* CTA */}
                   <div className="mt-6 flex flex-wrap gap-3">
                     <a href={dj.instagram} target="_blank" rel="noreferrer" className="px-4 py-2 rounded-xl border border-white/20 text-sm">
                       Instagram
@@ -642,7 +645,6 @@ export default function AfropianoAsiaWebsite() {
         </div>
       </section>
 
-      {/* GALLERY */}
       <section className="bg-neutral-900 py-24">
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
