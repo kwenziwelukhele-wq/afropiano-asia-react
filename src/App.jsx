@@ -222,7 +222,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
+      {/* Top Navigation with Logo */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+          <img src="/logo.png" alt="Afropiano Asia" className="w-28 md:w-32" />
+          <div className="hidden md:flex gap-6 text-sm text-neutral-300">
+            <a href="#tickets">Tickets</a>
+            <a href="#bookings">Bookings</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
       <section className="relative min-h-screen overflow-hidden border-b border-white/10">
+        {/* Premium Watermark Logo */}
+        <img src="/logo.png" alt="" className="absolute opacity-5 w-[500px] md:w-[700px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none" />
         <video
           className="absolute inset-0 h-full w-full object-cover"
           autoPlay
@@ -899,6 +913,21 @@ export default function App() {
           </div>
         </div>
       </section>
+
+      {/* Premium Footer */}
+      <footer className="bg-black border-t border-white/10 py-12">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <img src="/logo.png" alt="Afropiano Asia" className="mx-auto w-28 mb-6 opacity-90" />
+          <p className="text-neutral-400 text-sm">
+            © 2026 Afropiano Asia. African Nightlife Movement in Taiwan.
+          </p>
+          <div className="mt-4 flex justify-center gap-6 text-sm text-neutral-400">
+            <a href="https://www.instagram.com/afropianoasia/" target="_blank">Instagram</a>
+            <a href="https://afropiano.kktix.cc/" target="_blank">Tickets</a>
+            <a href="mailto:afropiano.asia@gmail.com">Email</a>
+          </div>
+        </div>
+      </footer>
 
       <section id="contact" className="bg-neutral-900 py-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
