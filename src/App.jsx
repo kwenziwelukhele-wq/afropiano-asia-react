@@ -7,7 +7,7 @@ function BrandLogo({ className = "", subtle = false }) {
       <img
         src="/logo.png.png"
         alt="Afropiano Asia"
-        className={`h-auto w-full object-contain ${subtle ? "opacity-90" : "opacity-100"}`}
+        className={`h-10 w-auto object-contain ${subtle ? "opacity-90" : "opacity-100"}`}
         onError={(e) => {
           e.currentTarget.style.display = "none";
           const fallback = e.currentTarget.nextElementSibling;
@@ -180,7 +180,7 @@ export default function App() {
       price: "From NT$15,000",
       bestFor: ["Clubs", "Festivals", "Private Events"],
       availability: "Available (Booking Open)",
-      video: "/videos/recap.mp4",
+      video: "/videos/recap.mp4.mp4",
     },
   ];
 
@@ -225,8 +225,8 @@ export default function App() {
           }}
         />
 
-        <video className="absolute inset-0 h-full w-full object-cover" autoPlay loop muted playsInline>
-          <source src="/videos/recap.mp4" type="video/mp4" />
+        <video className="absolute inset-0 h-full w-full object-cover" autoPlay loop muted playsInline poster="/logo.png.png">
+          <source src="/videos/recap.mp4.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-black/65" />
@@ -278,7 +278,7 @@ export default function App() {
                 <a href="https://wa.me/886903404734" target="_blank" rel="noreferrer" className="rounded-2xl bg-green-500 px-6 py-3 font-semibold text-white transition hover:scale-[1.03]">
                   WhatsApp Us
                 </a>
-                <a href="/videos/recap.mp4" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/20 bg-black/30 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10">
+                <a href="/videos/recap.mp4.mp4" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/20 bg-black/30 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10">
                   Watch Recap
                 </a>
               </div>
@@ -488,6 +488,11 @@ export default function App() {
       </section>
 
       <section className="py-20 text-center">
+        <div className="mx-auto mb-12 max-w-4xl">
+          <video controls className="w-full rounded-3xl border border-white/10 shadow-xl">
+            <source src="/videos/recap.mp4.mp4" type="video/mp4" />
+          </video>
+        </div>
         <h2 className="text-3xl font-bold md:text-5xl">Experience The Movement</h2>
         <p className="mt-6 text-neutral-300">Watch the energy. Join the culture. Be part of the fastest growing African nightlife scene in Taiwan.</p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -658,7 +663,7 @@ export default function App() {
 
       <footer className="border-t border-white/10 bg-black py-12">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <div className="mx-auto mb-6 w-32 md:w-40">
+          <div className="mx-auto mb-6 flex justify-center">
             <BrandLogo subtle />
           </div>
           <p className="text-sm text-neutral-400">© 2026 Afropiano Asia. African Nightlife Movement in Taiwan.</p>
