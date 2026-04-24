@@ -1,9 +1,6 @@
 function BrandLogo({ className = "", subtle = false }) {
   return (
-    <div
-      className={`flex items-center gap-3 ${className}`}
-      aria-label="Afropiano Asia"
-    >
+    <div className={`flex items-center gap-3 ${className}`} aria-label="Afropiano Asia">
       <img
         src="/logo.png.png"
         alt="Afropiano Asia"
@@ -21,6 +18,29 @@ function BrandLogo({ className = "", subtle = false }) {
         Afropiano Asia
       </div>
     </div>
+  );
+}
+
+function CulturalDivider({ className = "" }) {
+  return (
+    <div className={`mx-auto flex items-center justify-center gap-3 ${className}`} aria-hidden="true">
+      <span className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
+      <span className="h-[3px] w-14 bg-gradient-to-r from-orange-700 via-yellow-400 to-orange-700" />
+      <span className="h-2.5 w-2.5 rotate-45 bg-orange-500" />
+      <span className="h-[3px] w-20 bg-gradient-to-r from-yellow-400 via-orange-600 to-yellow-400" />
+      <span className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
+    </div>
+  );
+}
+
+function PatternCorners() {
+  return (
+    <>
+      <div className="absolute left-0 top-0 h-16 w-16 border-l-2 border-t-2 border-yellow-400/50" />
+      <div className="absolute right-0 top-0 h-16 w-16 border-r-2 border-t-2 border-orange-500/40" />
+      <div className="absolute bottom-0 left-0 h-16 w-16 border-b-2 border-l-2 border-orange-500/40" />
+      <div className="absolute bottom-0 right-0 h-16 w-16 border-b-2 border-r-2 border-yellow-400/50" />
+    </>
   );
 }
 
@@ -132,14 +152,13 @@ export default function App() {
   ];
 
   const galleryImages = [
-    { src: "/gallery/img1.jpg", title: "Summer Pool Party", tag: "Outdoor Energy", size: "md:col-span-7 md:row-span-2" },
-    { src: "/gallery/img2.jpg", title: "White Party", tag: "Signature Experience", size: "md:col-span-5" },
-    { src: "/gallery/img3.jpg", title: "Gogo Skhotheni", tag: "International Booking", size: "md:col-span-5" },
-    { src: "/gallery/img4.jpg", title: "Crowd Moments", tag: "Packed Rooms", size: "md:col-span-4" },
-    { src: "/gallery/img5.jpg", title: "DJ Experience", tag: "Performance", size: "md:col-span-4" },
-    { src: "/gallery/img6.jpg", title: "Culture & Fashion", tag: "Premium Vibes", size: "md:col-span-4" },
-    { src: "/gallery/img7.jpg", title: "Nightlife Visuals", tag: "Lighting & Atmosphere", size: "md:col-span-6" },
-    { src: "/gallery/img8.jpg", title: "Community", tag: "People & Connection", size: "md:col-span-6" },
+    // GALLERY BLOCK 1: Summer Pool Party only
+    {
+      src: "/gallery/summer-pool-party.jpg",
+      title: "Summer Pool Party 2025",
+      tag: "Outdoor Energy",
+      size: "md:col-span-12 md:row-span-2",
+    },
   ];
 
   const galleryEvents = [
@@ -148,24 +167,6 @@ export default function App() {
       title: "Summer Pool Party 2025",
       description: "Outdoor energy, crowd movement, and unforgettable summer vibes.",
       link: "https://drive.google.com/drive/folders/1AA8hvDzGBPGW47cy01jivo67iq6MVTP7?usp=drive_link",
-    },
-    {
-      label: "International Booking",
-      title: "Gogo Skhotheni Party",
-      description: "A landmark moment for the brand with international headline appeal.",
-      link: "https://drive.google.com/drive/folders/1Ky476oplAq8V4dljzwYuTeR_bNmQLnU3?usp=drive_link",
-    },
-    {
-      label: "Signature Event",
-      title: "Annual White Party",
-      description: "Premium fashion, nightlife visuals, and elevated all-white energy.",
-      link: "https://drive.google.com/drive/folders/1HMkYidK8ZCgbrHvUt7FSjcZmY2wfKLn-?usp=drive_link",
-    },
-    {
-      label: "Spring Festival",
-      title: "Afropiano Spring Fest with Young Zesh",
-      description: "A special headline collaboration that added fresh energy to the AFROPIANO ASIA story.",
-      link: "https://drive.google.com/drive/folders/1ov6c96Q2WIS2UhO3J4RAWaVexzWy2ruX?usp=drive_link",
     },
   ];
 
@@ -199,13 +200,22 @@ export default function App() {
     },
   ];
 
+  const partners = [
+    { src: "/AFRO SATURDAY LOGO.png", alt: "Afro Saturday", href: "#" },
+    { src: "/better life logo (with gradient).png", alt: "Better Life", href: "https://www.instagram.com/betterlife_events" },
+    { src: "/LOUDCREW LOGO (1).png", alt: "Loud Crew", href: "https://www.instagram.com/loudcrewtw" },
+    { src: "/party roots.jpg", alt: "Party Roots", href: "https://www.instagram.com/partyroots_taichung" },
+  ];
+
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white">
-      {/* Global African texture overlay */}
       <div className="pointer-events-none fixed inset-0 opacity-[0.04] bg-[url('https://www.transparenttextures.com/patterns/african-pattern.png')]" />
+      {/* Stronger African geometric accent */}
+      <div className="pointer-events-none fixed inset-0 opacity-[0.06] bg-[radial-gradient(circle_at_20%_30%,rgba(249,115,22,0.15),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(250,204,21,0.12),transparent_40%)]" />
+
       <div className="fixed inset-x-0 top-0 z-50 border-b border-yellow-400/10 bg-black/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-6">
-          <a href="#top" className="block w-36 md:w-44 shrink-0">
+          <a href="#top" className="block shrink-0 w-36 md:w-44">
             <BrandLogo />
           </a>
           <div className="hidden items-center gap-6 text-sm text-neutral-200 md:flex">
@@ -234,7 +244,6 @@ export default function App() {
         <div className="absolute inset-0 bg-black/75" />
         <div className="absolute inset-0 opacity-[0.10] mix-blend-soft-light [background-image:radial-gradient(circle_at_center,white_0.6px,transparent_0.7px)] [background-size:10px_10px]" />
         <div className="absolute inset-0 shadow-[inset_0_0_180px_rgba(0,0,0,0.75)]" />
-        {/* Warm African gradient */}
         <div className="absolute inset-0 bg-gradient-to-br from-orange-900/30 via-transparent to-yellow-600/20" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(250,204,21,0.18),transparent_22%),radial-gradient(circle_at_bottom_left,rgba(249,115,22,0.18),transparent_28%)]" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
@@ -246,6 +255,9 @@ export default function App() {
           <div className="grid w-full gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
             <div>
               <div className="mb-6 flex flex-wrap gap-3">
+                <div className="mb-2 w-full text-left">
+                  <CulturalDivider className="mx-0 justify-start" />
+                </div>
                 <span className="rounded-full border border-yellow-300/30 bg-yellow-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-yellow-200 backdrop-blur-sm">
                   Amapiano • Afrobeats • Culture
                 </span>
@@ -255,15 +267,24 @@ export default function App() {
               </div>
 
               <div className="mb-8 lg:hidden">
-                <div className="w-40 md:w-48 rounded-3xl border border-yellow-400/10 bg-black/40 backdrop-blur-lg p-3 backdrop-blur-md">
+                <div className="w-40 rounded-3xl border border-yellow-400/10 bg-black/40 p-3 backdrop-blur-lg md:w-48">
                   <BrandLogo subtle />
                 </div>
               </div>
 
-              <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl xl:text-8xl">
+              <div className="relative mt-3 inline-block max-w-5xl pr-6">
+                <div className="pointer-events-none absolute -left-4 -top-5 h-12 w-12 rounded-full border border-yellow-400/20 bg-yellow-400/10 blur-sm" />
+                <div className="pointer-events-none absolute -right-2 top-7 h-28 w-[3px] bg-gradient-to-b from-yellow-400 via-orange-500 to-transparent" />
+                <h1 className="max-w-5xl text-5xl font-black leading-[0.95] tracking-tight md:text-7xl xl:text-8xl">
                 AFROPIANO
                 <span className="block text-yellow-300">ASIA</span>
               </h1>
+              </div>
+
+              <div className="mt-6 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.28em] text-yellow-200/90">
+                <span className="h-[2px] w-10 bg-yellow-400" />
+                Southern African rhythm × Asian minimalism
+              </div>
 
               <p className="mt-6 max-w-3xl text-lg leading-8 text-neutral-200 md:text-xl">
                 A cultural movement bringing African culture to Taiwan through music, food, and experiences. We create premium events, unforgettable energy, and community-driven moments that go beyond nightlife.
@@ -283,7 +304,7 @@ export default function App() {
                 <a href="https://wa.me/886903404734" target="_blank" rel="noreferrer" className="rounded-2xl bg-green-500 px-6 py-3 font-semibold text-white transition hover:scale-[1.03]">
                   WhatsApp Us
                 </a>
-                <a href="/videos/recap.mp4.mp4" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/20 bg-black/40 backdrop-blur-lg px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10">
+                <a href="/videos/recap.mp4.mp4" target="_blank" rel="noreferrer" className="rounded-2xl border border-white/20 bg-black/40 px-6 py-3 font-semibold text-white backdrop-blur-sm transition hover:bg-white/10">
                   Watch Recap
                 </a>
               </div>
@@ -295,7 +316,7 @@ export default function App() {
                   { value: "4", label: "Cities Activated" },
                   { value: "2025", label: "Brand Launch" },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-[1.5rem] border border-yellow-400/15 bg-black/40 backdrop-blur-lg p-4 shadow-[0_10px_30px_rgba(0,0,0,0.25)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/25">
+                  <div key={item.label} className="rounded-[1.5rem] border border-yellow-400/15 bg-black/40 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.25)] backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:border-yellow-300/25">
                     <div className="text-2xl font-black text-yellow-300">{item.value}</div>
                     <div className="mt-1 text-xs uppercase tracking-[0.2em] text-neutral-200">{item.label}</div>
                   </div>
@@ -304,7 +325,9 @@ export default function App() {
             </div>
 
             <div className="flex justify-end">
-              <div className="w-full max-w-md rounded-[2rem] border border-yellow-400/10 bg-white/10 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl transition duration-500 hover:-translate-y-1 hover:border-yellow-300/30">
+              <div className="relative w-full max-w-md rounded-[2rem] border border-yellow-400/10 bg-white/10 p-6 shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-2xl transition duration-500 hover:-translate-y-1 hover:border-yellow-300/30">
+                <PatternCorners />
+                <div className="pointer-events-none absolute inset-x-10 top-0 h-[2px] bg-gradient-to-r from-transparent via-yellow-400/70 to-transparent" />
                 <div className="mb-6 flex items-start justify-between gap-4">
                   <div>
                     <div className="text-sm uppercase tracking-[0.24em] text-yellow-200">Featured Build-Up Event</div>
@@ -339,13 +362,15 @@ export default function App() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 rounded-full border border-yellow-400/10 bg-black/40 backdrop-blur-lg px-5 py-3 text-xs uppercase tracking-[0.28em] text-neutral-200 backdrop-blur-md md:block">
+        <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 rounded-full border border-yellow-400/10 bg-black/40 px-5 py-3 text-xs uppercase tracking-[0.28em] text-neutral-200 backdrop-blur-lg md:block">
           Scroll to explore the movement
         </div>
       </section>
 
-      {/* BRAND STORY */}
-      <section className="mx-auto max-w-6xl px-6 py-24 text-center">
+      <section className="mx-auto max-w-6xl px-6 py-24 text-center relative">
+        <div className="mb-8"><CulturalDivider /></div>
+        {/* African divider */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-[3px] bg-gradient-to-r from-orange-600 via-yellow-400 to-orange-600 rounded-full" />
         <p className="text-sm font-semibold uppercase tracking-[0.25em] text-yellow-300">Our Story</p>
         <h2 className="mt-4 text-3xl font-bold md:text-5xl">More Than Music. A Cultural Bridge.</h2>
         <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-neutral-200">
@@ -359,8 +384,10 @@ export default function App() {
         </p>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 text-center">
-        <h2 className="text-3xl font-bold md:text-5xl">African Events, Reimagined for Asia</h2>
+      <section className="mx-auto max-w-6xl px-6 py-20 text-center relative">
+        <div className="mb-8"><CulturalDivider /></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-400" />
+        <h2 className="text-3xl font-bold md:text-5xl tracking-tight">African Events, Reimagined for Asia</h2>
         <p className="mx-auto mt-6 max-w-3xl leading-8 text-neutral-200">
           AFROPIANO ASIA is a cultural platform bringing African culture to Taiwan through music, food, nightlife, and shared experiences. From Amapiano to Afrobeats and beyond, we create spaces where culture, community, and connection come together.
         </p>
@@ -404,12 +431,12 @@ export default function App() {
 
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-10">
         <div className="text-center">
-          <h2 className="text-3xl font-bold md:text-5xl">What We Produce</h2>
+          <h2 className="text-3xl font-bold md:text-5xl tracking-tight">What We Produce</h2>
           <p className="mx-auto mt-4 max-w-2xl text-neutral-200">Designed to help visitors quickly understand what AFROPIANO ASIA sells.</p>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {eventOffers.map((offer) => (
-            <div key={offer.title} className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
+            <div key={offer.title} className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] via-[#1a0f05] to-[#2a1408] p-6 before:absolute before:inset-0 before:rounded-[2rem] before:bg-[linear-gradient(45deg,transparent_48%,rgba(250,204,21,0.08)_50%,transparent_52%)] before:opacity-30 relative overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
               <h3 className="text-2xl font-bold">{offer.title}</h3>
               <p className="mt-4 leading-7 text-neutral-200">{offer.description}</p>
             </div>
@@ -428,7 +455,7 @@ export default function App() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {bookingOffers.map((offer) => (
-              <div key={offer.title} className="rounded-[2rem] border border-yellow-400/10 bg-black/40 backdrop-blur-lg p-6">
+              <div key={offer.title} className="rounded-[2rem] border border-yellow-400/10 bg-black/40 p-6 backdrop-blur-lg">
                 <h3 className="text-2xl font-bold">{offer.title}</h3>
                 <p className="mt-4 min-h-[96px] leading-7 text-neutral-200">{offer.description}</p>
                 <a href={offer.link} className="mt-6 inline-block rounded-2xl bg-yellow-400 px-5 py-3 font-semibold text-black">
@@ -456,10 +483,11 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] py-24">
+      <section className="relative bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] py-24">
+        <div className="pointer-events-none absolute right-6 top-10 hidden h-28 w-28 rotate-45 border border-yellow-400/20 lg:block" />
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="text-center">
-            <h2 className="text-3xl font-bold md:text-5xl">DJ Roster</h2>
+            <h2 className="text-3xl font-bold md:text-5xl tracking-tight">DJ Roster</h2>
             <p className="mx-auto mt-4 max-w-2xl text-neutral-200">
               Book elite Afro DJs across Taiwan. Transparent pricing, proven crowd control, and premium performance.
             </p>
@@ -511,7 +539,7 @@ export default function App() {
             <source src="/videos/recap.mp4.mp4" type="video/mp4" />
           </video>
         </div>
-        <h2 className="text-3xl font-bold md:text-5xl">Experience The Movement</h2>
+        <h2 className="text-3xl font-bold md:text-5xl tracking-tight">Experience The Movement</h2>
         <p className="mt-6 text-neutral-200">Watch the energy. Experience the culture. Be part of a growing African cultural movement in Taiwan.</p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
           <a href="https://www.tiktok.com/@afroyanoz" target="_blank" rel="noreferrer" className="rounded-2xl bg-yellow-400 px-6 py-3 font-semibold text-black">Watch on TikTok</a>
@@ -519,7 +547,8 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] py-24">
+      <section className="relative bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] py-24">
+        <div className="pointer-events-none absolute right-6 top-10 hidden h-28 w-28 rotate-45 border border-yellow-400/20 lg:block" />
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
@@ -549,7 +578,7 @@ export default function App() {
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {galleryEvents.map((event) => (
-              <a key={event.title} href={event.link} target="_blank" rel="noreferrer" className="group rounded-[1.75rem] border border-yellow-400/10 bg-black/40 backdrop-blur-lg p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20 hover:bg-gradient-to-br from-white/5 to-orange-900/10">
+              <a key={event.title} href={event.link} target="_blank" rel="noreferrer" className="group rounded-[1.75rem] border border-yellow-400/10 bg-black/40 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20 hover:bg-gradient-to-br from-white/5 to-orange-900/10">
                 <div className="text-sm uppercase tracking-[0.2em] text-yellow-300">{event.label}</div>
                 <h3 className="mt-3 text-2xl font-bold group-hover:text-yellow-300">{event.title}</h3>
                 <p className="mt-3 text-neutral-200">{event.description}</p>
@@ -560,7 +589,8 @@ export default function App() {
         </div>
       </section>
 
-      <section className="border-y border-yellow-400/10 bg-gradient-to-br from-white/5 to-orange-900/10 py-20">
+      <section className="relative border-y border-yellow-400/10 bg-gradient-to-br from-white/5 to-orange-900/10 py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[6px] bg-[repeating-linear-gradient(90deg,rgba(250,204,21,0.9)_0px,rgba(250,204,21,0.9)_18px,rgba(194,65,12,0.85)_18px,rgba(194,65,12,0.85)_36px,transparent_36px,transparent_54px)] opacity-60" />
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-yellow-300">Partners & Collaborators</p>
@@ -570,13 +600,16 @@ export default function App() {
             </p>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {[
-              { src: "/AFRO SATURDAY LOGO.png", alt: "Afro Saturday" },
-              { src: "/better life logo (with gradient).png", alt: "Better Life" },
-              { src: "/LOUDCREW LOGO (1).png", alt: "Loud Crew" },
-              { src: "/party roots.jpg", alt: "Party Roots" },
-            ].map((partner) => (
-              <div key={partner.alt} className="flex items-center justify-center rounded-2xl border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
+            {partners.map((partner) => (
+              <a
+                href={partner.href}
+                target="_blank"
+                rel="noreferrer"
+                key={partner.alt}
+                className="group relative flex items-center justify-center rounded-2xl border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20"
+              >
+                <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 rounded-full bg-yellow-400/70 opacity-0 transition group-hover:opacity-100" />
+                <span className="pointer-events-none absolute right-3 bottom-3 h-3 w-3 rounded-full bg-orange-500/70 opacity-0 transition group-hover:opacity-100" />
                 <img
                   src={partner.src}
                   alt={partner.alt}
@@ -590,7 +623,7 @@ export default function App() {
                 <div style={{ display: "none" }} className="items-center justify-center text-center text-sm font-semibold text-neutral-200">
                   {partner.alt}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -600,7 +633,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
             {stats.map((stat) => (
-              <div key={stat.label} className="rounded-2xl border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20 text-center">
+              <div key={stat.label} className="rounded-2xl border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 text-center shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
                 <div className="text-3xl font-black text-yellow-400">{stat.value}</div>
                 <div className="mt-2 text-sm uppercase tracking-wide text-neutral-200">{stat.label}</div>
               </div>
@@ -609,7 +642,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* MISSION & VISION FOR SPONSORS */}
       <section className="mx-auto max-w-7xl px-6 py-24 md:px-10">
         <div className="grid gap-12 lg:grid-cols-2">
           <div className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-8">
@@ -629,8 +661,8 @@ export default function App() {
         </div>
       </section>
 
-      {/* PRESS & CREDIBILITY */}
-      <section className="border-y border-yellow-400/10 bg-gradient-to-br from-white/5 to-orange-900/10 py-20">
+      <section className="relative border-y border-yellow-400/10 bg-gradient-to-br from-white/5 to-orange-900/10 py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[6px] bg-[repeating-linear-gradient(90deg,rgba(250,204,21,0.9)_0px,rgba(250,204,21,0.9)_18px,rgba(194,65,12,0.85)_18px,rgba(194,65,12,0.85)_36px,transparent_36px,transparent_54px)] opacity-60" />
         <div className="mx-auto max-w-7xl px-6 md:px-10">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-yellow-300">Press & Credibility</p>
@@ -642,20 +674,11 @@ export default function App() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
-              {
-                title: "International Bookings",
-                desc: "Hosted global African artists and built cross-border cultural experiences.",
-              },
-              {
-                title: "Multi-City Presence",
-                desc: "Events activated across Taichung, Taipei, Kaohsiung, and Tainan.",
-              },
-              {
-                title: "Cultural Impact",
-                desc: "Bringing African culture into new markets through music, food, and community.",
-              },
+              { title: "International Bookings", desc: "Hosted global African artists and built cross-border cultural experiences." },
+              { title: "Multi-City Presence", desc: "Events activated across Taichung, Taipei, Kaohsiung, and Tainan." },
+              { title: "Cultural Impact", desc: "Bringing African culture into new markets through music, food, and community." },
             ].map((item) => (
-              <div key={item.title} className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20 text-center">
+              <div key={item.title} className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] via-[#1a0f05] to-[#2a1408] p-6 before:absolute before:inset-0 before:rounded-[2rem] before:bg-[linear-gradient(45deg,transparent_48%,rgba(250,204,21,0.08)_50%,transparent_52%)] before:opacity-30 relative overflow-hidden text-center shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
                 <h3 className="text-xl font-bold text-yellow-300">{item.title}</h3>
                 <p className="mt-4 text-neutral-200">{item.desc}</p>
               </div>
@@ -692,14 +715,16 @@ export default function App() {
               </div>
               <div className="mt-6 grid gap-6">
                 {sponsorPackages.map((pkg) => (
-                  <div key={pkg.title} className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] p-6 shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
+                  <div key={pkg.title} className="rounded-[2rem] border border-yellow-400/10 bg-gradient-to-br from-[#0A0A0A] via-[#1a0f05] to-[#2a1408] p-6 before:absolute before:inset-0 before:rounded-[2rem] before:bg-[linear-gradient(45deg,transparent_48%,rgba(250,204,21,0.08)_50%,transparent_52%)] before:opacity-30 relative overflow-hidden shadow-[0_18px_50px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-yellow-300/20">
                     <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <h3 className="text-2xl font-bold">{pkg.title}</h3>
                       <span className="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-300">{pkg.price}</span>
                     </div>
                     <div className="mt-5 space-y-3">
                       {pkg.items.map((item) => (
-                        <div key={item} className="rounded-xl bg-gradient-to-br from-white/5 to-orange-900/10 px-4 py-3 text-neutral-200">{item}</div>
+                        <div key={item} className="rounded-xl bg-gradient-to-br from-white/5 to-orange-900/10 px-4 py-3 text-neutral-200">
+                          {item}
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -718,10 +743,11 @@ export default function App() {
         </div>
       </section>
 
-      <section className="border-y border-yellow-400/10 bg-gradient-to-br from-white/5 to-orange-900/10 py-20">
+      <section className="relative border-y border-yellow-400/10 bg-gradient-to-br from-white/5 to-orange-900/10 py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[6px] bg-[repeating-linear-gradient(90deg,rgba(250,204,21,0.9)_0px,rgba(250,204,21,0.9)_18px,rgba(194,65,12,0.85)_18px,rgba(194,65,12,0.85)_36px,transparent_36px,transparent_54px)] opacity-60" />
         <div className="mx-auto max-w-5xl px-6 md:px-10">
           <div className="text-center">
-            <h2 className="text-3xl font-bold md:text-5xl">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold md:text-5xl tracking-tight">Frequently Asked Questions</h2>
           </div>
           <div className="mt-12 space-y-4">
             {faqs.map((item) => (
@@ -734,7 +760,8 @@ export default function App() {
         </div>
       </section>
 
-      <footer className="border-t border-yellow-400/10 bg-black py-12">
+      <footer className="border-t border-yellow-400/10 bg-black py-12 relative">
+        <div className="absolute inset-0 opacity-[0.05] bg-[repeating-linear-gradient(45deg,rgba(250,204,21,0.2)_0px,rgba(250,204,21,0.2)_2px,transparent_2px,transparent_12px)]" />
         <div className="mx-auto max-w-7xl px-6 text-center">
           <div className="mx-auto mb-6 flex justify-center">
             <BrandLogo subtle />
@@ -750,7 +777,7 @@ export default function App() {
 
       <section id="contact" className="bg-gradient-to-br from-[#0A0A0A] to-[#1a0f05] py-20">
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <h2 className="text-3xl font-bold md:text-5xl">Book AFROPIANO ASIA</h2>
+          <h2 className="text-3xl font-bold md:text-5xl tracking-tight">Book AFROPIANO ASIA</h2>
           <p className="mt-6 text-neutral-200">
             For bookings, partnerships, collaborations, and sponsorships. Brands can request custom sponsor packages directly through email or WhatsApp.
           </p>
