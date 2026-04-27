@@ -44,7 +44,20 @@ function PatternCorners() {
   );
 }
 
+import { useEffect } from "react";
+
 export default function App() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7978237124525491";
+    script.crossOrigin = "anonymous";
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   const featuredEvent = {
     title: "Annual White Party (Build-Up Event)",
     date: "Date TBA",
